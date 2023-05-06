@@ -2,22 +2,23 @@ import PaintingList from "./components/PaintingList";
 import Section from "./components/Section";
 import paintings from "./paintings.json";
 
+// ////////////// tree of components
 export default function App() {
-  const isOnline = false;
   return (
     <div>
-      {/* <PaintingList items={paintings} />*/}
-
       <Section title="Top of the week">
         <PaintingList items={paintings} />
       </Section>
       <Section title="The best">
         <PaintingList items={paintings} />
       </Section>
-      {/* {isOnline && "Online"}
-      {isOnline ? "Online" : "Offline"} */}
+    </div>
+  );
+}
 
-      {/* {paintings.map(painting => (
+// //////////// render of gallery 1 component /////////////
+{
+  /* {paintings.map(painting => (
         <Painting
           key={painting.id}
           imageUrl={painting.url}
@@ -27,9 +28,13 @@ export default function App() {
           price={painting.price}
           quantity={painting.quantity}
         />
-      ))} */}
+      ))} */
+}
 
-      {/* <Painting
+// ///////////////// Wrong rendering of collection////////////////
+
+{
+  /* <Painting
         imageUrl={paintings[0].url}
         title={paintings[0].title}
         authorName={paintings[0].author.tag}
@@ -54,7 +59,5 @@ export default function App() {
         profileUrl={paintings[2].author.url}
         price={paintings[2].price}
         quantity={paintings[2].quantity}
-      /> */}
-    </div>
-  );
+      /> */
 }
