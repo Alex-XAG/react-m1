@@ -1,20 +1,35 @@
-import PaintingList from "./components/PaintingList";
-import Section from "./components/Section";
-import paintings from "./paintings.json";
+import { PageTitle } from "./PageTitle/PageTitle";
+import { EventBoard } from "./EventBoard/EventBoard";
+import upcomingEvents from "../upcoming-events.json";
 
-// ////////////// tree of components
-export default function App() {
+export const App = () => {
   return (
-    <div>
-      <Section title="Top of the week">
-        <PaintingList items={paintings} />
-      </Section>
-      <Section title="The best">
-        <PaintingList items={paintings} />
-      </Section>
-    </div>
+    <>
+      <PageTitle text="24th Core Worlds Coalition Conference" />
+      <EventBoard events={upcomingEvents} />
+    </>
   );
-}
+};
+
+///////////////// 1st LECTION!!! //////////////////
+
+// import PaintingList from "./PaintingList";
+// import Section from "./Section";
+// import paintings from "../paintings.json";
+
+//// tree of components 1 lection!!!!!!!////////////////////
+// export default function App() {
+//   return (
+//     <div>
+//       <Section title="Top of the week">
+//         <PaintingList items={paintings} />
+//       </Section>
+//       <Section title="The best">
+//         <PaintingList items={paintings} />
+//       </Section>
+//     </div>
+//   );
+// }
 
 // //////////// render of gallery 1 component /////////////
 {
