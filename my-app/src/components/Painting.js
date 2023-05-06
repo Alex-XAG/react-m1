@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 // import defaultImage from "./defaul.jpg";
 
 export default function Painting({
@@ -6,6 +7,7 @@ export default function Painting({
   profileUrl,
   authorName = "unkhnow",
   price,
+  quantity,
 }) {
   // console.log(props);
   // const { url, title, profileUrl, authorName, price } = props; // Destructuring
@@ -17,11 +19,20 @@ export default function Painting({
         Author: <a href={profileUrl}>{authorName}</a>
       </p>
       <p>Price: {price} credits</p>
-      <p>Availability: finished or are available</p>
+      <p>Availability: {quantity < 10 ? "finishing" : "available"}</p>
       <button type="button">Add to Basket</button>
     </div>
   );
 }
+
+Painting.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  profileUrl: PropTypes.string.isRequired,
+  authorName: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+};
 
 // const PaintingArrow = ({
 //     url,
